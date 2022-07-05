@@ -1,14 +1,13 @@
 const axios = require('axios');
 const core = require('@actions/core');
 
-const whatsappURL = core.getInput('urltoken', { required: true });
-const url = core.getInput('mesej', { required: true });
-const scope = core.getInput('scope', { required: true });
+const urltoken = core.getInput('token', { required: true });
+const mesej = core.getInput('mesej', { required: true });
+const scope = core.getInput('mobile', { required: true });
 let payload = {
-    "message" : url,
-    "scope": scope
+    "message" : mesej,
 }
-let getSplask = axios.post(whatsappURL, payload)
+let getSplask = axios.post(urltoken + scope, payload)
 .then(res => {
     console.log(res.data)
     let myData = JSON.stringify(res.data)

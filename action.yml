@@ -1,0 +1,24 @@
+name: 'WhatsApp Messaging GitHub Action'
+description: 'Sending message using WhatsApp'
+author: 'Hanafiah <hanafiah@enovade.com>'
+inputs:
+  token:
+    description: 'WhatsApp token'
+    required: true
+  mesej:
+    description: 'Message to send'
+    required: true
+  mobile:
+    description: 'Mobile number to send message'
+    required: true
+outputs:
+  jawapan: 
+    description: 'The results'
+    
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
+
+branding:
+  color: 'blue'
+  icon: 'message-square'
